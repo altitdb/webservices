@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <description>Vai nas config e adiciona o pool de conexao com o banco depois deixa como digest e escolhe o realm, obs: deve fazer isso no default-server
+CREATE TABLE users
+(username VARCHAR(255) NOT NULL
+, password VARCHAR(255) NULL
+, CONSTRAINT PRIMARY KEY(username));
+CREATE TABLE groups
+(username VARCHAR(255) NULL
+, groupname VARCHAR(255) NULL );
+CREATE INDEX groups_users_FK1 ON groups(username ASC);
+insert into users values('altieres','altieres');
+insert into groups values('altieres', 'admin');</description>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>CalculadoraService</web-resource-name>
+            <description>Apenas Usuários Autenticados</description>
+            <url-pattern>/*</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>DIGEST</auth-method>
+        <realm-name>authDigest</realm-name>
+    </login-config>
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
+</web-app>

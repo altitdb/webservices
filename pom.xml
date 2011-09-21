@@ -1,0 +1,30 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>br.com.altieres</groupId>
+    <artifactId>WebServices</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>WebServices</name>
+    <developers>
+        <developer>
+            <name>Altieres de Matos</name>
+            <email>altitdb@gmail.com</email>
+            <url>www.altieresdematos.com.br</url>
+        </developer>
+    </developers>
+    <modules>
+        <module>WebServiceSoapAppSecureDigest</module>
+        <module>WebServiceSoapAppSecureClientCert</module>
+        <module>WebServiceSoapAppSecureBasic</module>
+        <module>WebServiceSoapAppNotSecure</module>
+        <module>WebServiceSoapAppClientWebNotSecure</module>
+        <module>WebServiceSoapAppClientDesktopSecureDigest</module>
+        <module>WebServiceSoapAppClientDesktopSecureClientCert</module>
+        <module>WebServiceSoapAppClientDesktopSecureBasic</module>
+        <module>WebServiceSoapAppClientDesktopNotSecure</module>
+        <module>WebServiceRestAppNotSecure</module>
+        <module>WebServiceRestAppClientDesktopNotSecure</module>
+    </modules>  
+</project>
