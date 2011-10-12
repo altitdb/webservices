@@ -24,7 +24,8 @@ public class Client {
 
     public static void main(String[] args) throws AxisFault, XMLStreamException {
         ServiceClient serviceClient = new ServiceClient();
-        serviceClient.setTargetEPR(new EndpointReference("http://localhost:8080/WebServiceSoapAppSecureDigest/CalculadoraService"));
+        serviceClient.setTargetEPR(
+            new EndpointReference("http://localhost:8080/WebServiceSoapAppSecureDigest/CalculadoraService"));
         serviceClient.getOptions().setAction("urn:soma");
 
         HttpTransportProperties.Authenticator authenticator = new HttpTransportProperties.Authenticator();
